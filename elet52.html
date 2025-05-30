@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elettromagnetismo</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #001f3f, #003366, #004080);
+      color: #f5f5f5;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background-color: #660000;
+      color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+ header h7 {
+      font-size: 25px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+    nav {
+      background: #cc0000;
+      text-align: center;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 6px solid #ff4c4c;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .section h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .section p, .section ul {
+      line-height: 1.8;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+
+    .scroll-image {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      opacity: 0.8;
+    }
+
+    .scroll-image:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .formula {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #110022;
+      color: #ccc;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Elettromagnetismo</h1>
+    <h7>Kaloian Tedeschi</h7>
+  </header>
+
+  <nav>
+    <a href="#origine">Origine</a>
+    <a href="#interazioni">Caratterizzazione delle interazioni elettromagnetiche</a>
+    <a href="#principi">Principi</a>
+    <a href="#equazioni">Equazioni di Maxwell</a>
+    <a href="#effetti">Applicazioni</a>
+    <a href="#conduttori">Conduttori</a>
+    <a href="#isolanti">Isolanti</a>
+    <a href="#condensatori">Condensatori</a>
+    <a href="#induttori">Induttori</a>
+    <a href="#semiconduttori">Semiconduttori</a>
+    <a href="#trasferimento">Trasferimento di potenza wireless</a>
+    <a href="#curiosita">Curiosità</a>
+    <a href="#conclusione">Conclusione</a>
+  </nav>
+
+  <section id="origine" class="section">
+    <h2>Origine della teoria</h2>
+    <p>
+      L’elettromagnetismo è una parte della fisica che studia due fenomeni legati tra loro: l’elettricità e il magnetismo. All’inizio, queste due forze sembravano separate, ma nel tempo si è scoperto che sono strettamente collegate.
+
+Le prime scoperte furono fatte nel XVIII secolo: gli scienziati iniziarono a studiare l’elettricità (come si muovono le cariche elettriche) e il magnetismo (le forze che agiscono tra i magneti), ma come due cose diverse.
+
+Nel 1820 Hans Christian Ørsted scoprì che un filo percorso da corrente elettrica poteva far muovere l’ago di una bussola. Questo fu il primo segno che elettricità e magnetismo sono collegati.
+
+André-Marie Ampère, poco dopo, studiò più a fondo questo legame e spiegò come le correnti elettriche creano campi magnetici.
+
+I due fenomeni furono unificati grazie a Michael Faraday - scoprì che anche il contrario è vero: un campo magnetico che cambia nel tempo può generare una corrente elettrica. 
+Questo principio si chiama induzione elettromagnetica.
+
+James Clerk Maxwell, un fisico scozzese, fu il primo a riunire tutte queste scoperte in quattro equazioni matematiche (chiamate oggi equazioni di Maxwell).
+
+Nel 1865, Maxwell mostrò che l’elettricità e il magnetismo sono due aspetti di un’unica forza: l’elettromagnetismo.
+
+Le sue equazioni prevedevano anche qualcosa di sorprendente: la luce è un’onda elettromagnetica, cioè un’onda formata da campi elettrici e magnetici che si propagano nello spazio.
+    </p>
+    <div class="image-container fade-in">
+      <img src="Oersted_experiment.png" alt="Esperimento di Ørsted" class="scroll-image">
+      <p style="margin-top:10px; font-size: 0.9em;">Esperimento di Ørsted: la corrente influenza l'ago magnetico.</p>
+    </div>
+  </section>
+<section id="interazioni" class="section">
+    <h2>Caratterizzazione delle interazioni elettromagnetiche</h2>
+    <p>
+La forza elettromagnetica è la seconda più forte delle quattro forze fondamentali della natura. È in gran parte responsabile delle interazioni tra atomi, molecole e oggetti macroscopici. 
+
+La forza elettromagnetica esercita la sua influenza attraverso la propagazione di onde elettriche e magnetiche che viaggiano perpendicolarmente l'una all'altra, oscillando a frequenze specifiche. Nel vuoto, queste onde si propagano a una velocità costante, la velocità della luce nel vuoto, che è all'incirca pari a 3 x 10^8 m/s.
+
+La velocità della luce nel vuoto c è correlata alla frequenza v in metri e alla lunghezza d'onda λ in Hz attraverso una semplice relazione come:
+<div class="formula">\( c = v \cdot \lambda \)</div>
+</p>
+  </section>
+
+  <section id="principi" class="section">
+    <h2>Principi Base</h2>
+    <p>
+Con la pubblicazione del "Trattato sull'elettricità e il magnetismo" nel 1873, James Clerk Maxwell mostrò che i fenomeni elettrici e magnetici sono due aspetti di un’unica forza: la forza elettromagnetica.
+
+A livello osservabile, questa forza si manifesta in diversi modi:
+
+<ul>
+  <li>
+    Le cariche elettriche dello stesso tipo (entrambe positive o entrambe negative) si respingono, mentre quelle di tipo opposto si attraggono. La forza che agisce tra due cariche diminuisce rapidamente man mano che aumenta la distanza tra loro: è più intensa quando le cariche sono vicine.
+  </li>
+  <li>
+    Anche i poli magnetici si comportano in modo simile: il polo nord e il polo sud si attraggono, mentre due poli uguali si respingono. A differenza delle cariche elettriche, i poli magnetici non esistono mai da soli: sono sempre in coppia (nord e sud insieme).
+  </li>
+  <li>
+    Quando una corrente elettrica attraversa un filo, si crea un campo magnetico attorno al filo, che ha forma circolare. La direzione di questo campo dipende da come scorre la corrente.
+  </li>
+  <li>
+    Se invece un filo si muove all’interno di un campo magnetico, si genera una corrente elettrica nel filo. Anche in questo caso, la direzione del movimento del filo determina il verso della corrente generata.
+  </li>
+</ul>
+    </p>
+  </section>
+
+  <section id="equazioni" class="section">
+    <h2>Le Equazioni di Maxwell</h2>
+    <p>
+   In fisica, i campi descrivono le interazioni tra energia e materia in punti specifici dello spazio e del tempo. In particolare, un campo vettoriale assegna un'ampiezza e una direzione a ciascuno di questi punti. Il campo elettrico che circonda una carica elettrica statica è descritto da un campo vettoriale.
+
+In ogni punto, l'ampiezza del vettore descrive l'intensità del campo elettrico, mentre la sua direzione descrive la direzione del campo. Per convenzione, il campo punta nella stessa direzione della forza sulle cariche positive e nella direzione opposta sulle cariche negative.
+
+Pertanto, i campi elettrici fluiscono sempre lontano dalle cariche positive e verso le cariche negative. La relazione tra la forza F esercitata da una carica sorgente (in newton), una carica di prova q (in coulomb) e l'intensità del campo elettrico E (in volt per metro) è data da:
+<div class="formula">\( \vec{F} = q \vec{E} \)</div>
+<p>
+Un campo magnetico circonda una carica elettrica in movimento. Questo campo influenza altre cariche e magneti. La direzione della forza su una carica in movimento in un campo magnetico è perpendicolare sia alla sua direzione di movimento sia alle linee del campo magnetico.
+
+In combinazione, le forze elettriche e magnetiche che agiscono su una particella carica danno luogo a una forza di Lorentz: una forza proporzionale alla carica e alla grandezza del campo elettrico nella direzione del campo elettrico E e una forza proporzionale alla grandezza del campo magnetico, alla carica e alla velocità nella direzione perpendicolare alla velocità v della particella e al campo magnetico B. Insieme alla legge di Lorentz, le equazioni di Maxwell forniscono una descrizione classica completa delle interazioni elettromagnetiche.
+
+Le equazioni di Maxwell costituiscono il fondamento dell'elettromagnetismo classico. Queste quattro equazioni, espresse in forma differenziale, descrivono il comportamento dei campi elettrici e magnetici e le loro interazioni con cariche e correnti:
+</p>
+    </p>
+    <div class="formula">\( \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \)<br>La legge di Gauss (nota anche come teorema del flusso di Gauss) mette in relazione la distribuzione delle cariche elettriche con il campo elettrico. Essa afferma che il flusso elettrico netto attraverso una qualsiasi superficie chiusa (una superficie gaussiana) è proporzionale alla carica elettrica netta racchiusa in quella superficie.
+
+Pertanto, se una superficie non racchiude una carica elettrica, non esiste un flusso elettrico. Di conseguenza, se una carica elettrica è posizionata vicino a una superficie di questo tipo, i flussi elettrici in entrata e in uscita dalla superficie devono annullarsi a vicenda. </div>
+    <div class="formula">\( \nabla \cdot \vec{B} = 0 \)<br>Analogamente alla prima equazione, la legge di Gauss per il magnetismo descrive il comportamento di un flusso magnetico attraverso una superficie chiusa. Afferma che questo flusso deve essere sempre pari a zero. Pertanto, se è presente un campo magnetico nelle vicinanze, il flusso magnetico verso la superficie deve annullare il flusso verso l'esterno.
+
+Detto altrimenti, i monopoli magnetici non possono esistere come monopoli elettrici (cariche). Pertanto, i poli magnetici positivi e negativi devono sempre esistere come dipoli (nord e sud).</div>
+    <div class="formula">\( \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} \)<br>L'equazione di Maxwell-Faraday descrive come un campo magnetico variabile nel tempo produce un campo elettrico. Può anche essere ricavata dalla legge di Faraday e dalla legge di Lorentz.</div>
+    <div class="formula">\( \nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t} \)<br>La legge di Ampère afferma che una corrente elettrica che scorre attraverso un filo genera un campo magnetico. In un filo rettilineo, il campo magnetico si arrotola intorno al filo, con la direzione del flusso indicata dalle quattro dita della regola della mano destra. In un filo avvolto, il campo magnetico punta su una linea retta indicata dal pollice nella regola della mano destra.
+
+L'estensione di Maxwell alla legge di Ampère afferma che un campo elettrico variabile nel tempo può generare anche un campo magnetico variabile.</div>
+  </section>
+  <section id="effetti" class="section">
+    <h2>Applicazioni dell'Elettromagnetismo</h2>
+    <p>Studiare l’elettromagnetismo è fondamentale per capire come funzionano molti dispositivi elettronici. Grazie a queste conoscenze si progettano componenti come fili conduttori, condensatori (che accumulano cariche), induttori (che generano campi magnetici) e semiconduttori (usati nei circuiti elettronici). Questi elementi vengono poi usati per costruire circuiti più complessi, come quelli presenti nei veicoli elettrici, nei sistemi di telerilevamento, negli strumenti di misura, negli apparecchi elettronici, nei dispositivi per gestire l’energia e in tante altre tecnologie moderne.
+</p>
+<div class="image-container fade-in">
+  <img src="Electric_motor_static.png"
+       data-gif="Electric_motor.gif"
+       data-static="Electric_motor_static.png"
+       alt="Motore elettrico animazione"
+       class="scroll-image hover-gif">
+  <p style="margin-top:10px; font-size: 0.9em;">Funzionamento di un motore elettrico.</p>
+</div>
+
+<script>
+  document.querySelectorAll('.hover-gif').forEach(img => {
+    const gif = img.getAttribute('data-gif');
+    const staticImg = img.getAttribute('data-static');
+
+    img.addEventListener('mouseenter', () => {
+      img.src = gif;
+    });
+
+    img.addEventListener('mouseleave', () => {
+      img.src = staticImg;
+    });
+  });
+</script>
+
+  </section>
+<section id="conduttori" class="section">
+    <h2>Conduttori</h2>
+    <p>I materiali conduttori sono quelli che permettono agli elettroni di muoversi facilmente al loro interno. Metalli come oro, argento, rame e alluminio sono ottimi conduttori perché i loro elettroni si possono staccare facilmente dagli atomi e muoversi liberamente, permettendo così il passaggio della corrente elettrica.
+
+Nei semiconduttori, invece, gli elettroni sono inizialmente legati agli atomi, ma con una piccola quantità di energia (come il calore o la luce) possono liberarsi e contribuire al flusso di corrente. I semiconduttori, come il silicio, sono alla base dei transistor e dei microchip che troviamo in computer, telefoni e altri dispositivi elettronici.
+
+I superconduttori sono materiali speciali che, quando vengono raffreddati sotto una certa temperatura (chiamata temperatura critica), perdono completamente la loro resistenza elettrica: la corrente può scorrere senza alcuna perdita di energia. Inoltre, espellono i campi magnetici interni, un fenomeno noto come effetto Meissner. Alcuni superconduttori moderni, come lo YBCO (composto da ittrio, bario, rame e ossigeno), funzionano già a temperature relativamente alte (intorno a -140 °C), e sono usati in tecnologie avanzate come la risonanza magnetica e i treni a levitazione magnetica.
+</p>
+</section>
+<section id="isolanti" class="section">
+    <h2>Isolanti</h2>
+    <p>Gli isolanti sono materiali che non lasciano passare facilmente la corrente elettrica. Questo succede perché, al loro interno, gli elettroni sono fortemente legati ai nuclei degli atomi e non si muovono liberamente, neppure se viene applicato un campo elettrico. Per questo motivo, gli isolanti sono molto utili per rivestire i cavi elettrici: impediscono il passaggio della corrente verso l’esterno e rendono l’uso dell’elettricità più sicuro.
+
+Alcuni isolanti, però, possono comportarsi in modo particolare se sottoposti a un campo elettrico. In questi casi, le cariche all’interno del materiale si spostano leggermente e creano delle zone con cariche opposte, chiamate dipoli. Questi materiali vengono chiamati dielettrici e sono usati, ad esempio, nei condensatori, dove servono ad aumentare la quantità di energia elettrica che può essere immagazzinata.
+</p>
+</section>
+<section id="condensatori" class="section">
+    <h2>Condensatori</h2>
+    <p>I condensatori sono dispositivi elettronici che immagazzinano energia elettrica in un campo elettrico generato tra due piastre. La capacità C misura la capacità di un condensatore di immagazzinare energia. È proporzionale alla permittività elettrica dello spazio libero, in modo tale che, per un'area di piastra A:
+<div class="formula">
+  \( C = \frac{\varepsilon_0 \cdot A}{d} \)
+</div>
+
+</p>
+</section>
+
+<section id="induttori" class="section">
+    <h2>Induttori</h2>
+    <p>Gli induttori sono componenti elettronici che immagazzinano energia in un campo magnetico. Questo campo si crea quando una corrente elettrica scorre in un filo avvolto a spirale (solenoide). Secondo la legge di Ampère, il passaggio della corrente genera un campo magnetico lungo l’asse dell’avvolgimento.
+
+L’energia accumulata nell’induttore dipende dalla corrente elettrica 
+I che lo attraversa, ed è legata a una proprietà chiamata induttanza 
+L. L’induttanza misura quanto un circuito si oppone ai cambiamenti della corrente.
+
+Più l’induttanza è alta, più l’induttore "resiste" ai cambiamenti improvvisi di corrente. Per questo motivo, gli induttori con alta induttanza sono utili nei circuiti in corrente alternata (AC), dove possono attenuare le variazioni di corrente e ridurre i disturbi elettrici.
+</p>
+</section>
+
+<section id="semiconduttori" class="section">
+    <h2>Semiconduttori</h2>
+    <p>I semiconduttori sono materiali che conducono elettricità meglio degli isolanti, ma non così bene come i conduttori (come il rame). La loro capacità di condurre elettricità può essere controllata facilmente, il che li rende molto utili in elettronica.
+
+Per cambiare la loro conduttività, si possono aggiungere piccole quantità di altre sostanze (processo chiamato drogaggio) oppure applicare campi elettrici o magnetici, riscaldarli, illuminarli o deformare il materiale, come nel caso di una griglia di silicio puro.
+
+Queste proprietà sono la base di dispositivi importanti come i transistor, che sono i "mattoni" fondamentali dell'elettronica moderna. I componenti a semiconduttore possono essere usati da soli o inseriti in circuiti integrati che contengono milioni di dispositivi miniaturizzati collegati insieme su una piccola piastrina (chiamata wafer).
+I due principali tipi di dispositivi a semiconduttore sono:
+<ul>
+  <li>
+I diodi sono componenti elettronici con due terminali che permettono il passaggio della corrente solo in una direzione. Quando sono polarizzati direttamente, lasciano passare la corrente; quando sono polarizzati inversamente, si comportano come isolanti.
+
+Un tipo speciale di diodo è il fotodiodo, che diventa più conduttivo quando viene colpito dalla luce: la luce libera più elettroni e aumenta la corrente. Altri tipi di diodi includono:
+  <ul>
+   <li>
+LED (diodi a emissione luminosa): producono luce quando la corrente li attraversa.
+   </li>
+   <li>
+Diodi laser, diodi Gunn, diodi tunnel, fotocellule e celle solari, che convertono la luce in elettricità.
+   </li>
+  </ul>
+ </li>
+<li>
+I transistor sono dispositivi a tre terminali che possono amplificare segnali o comportarsi come interruttori elettronici. Sono usati sia in:
+<ul>
+ <li>Circuiti digitali, come quelli nei computer, dove accendono o spengono i segnali (porte logiche).</li>
+<li>Circuiti analogici, come amplificatori o oscillatori, dove gestiscono segnali continui.</li>
+</ul>
+Nei circuiti di potenza, i transistor controllano la distribuzione di corrente e tensione.
+
+Il tipo più usato è il MOSFET (transistor ad effetto di campo a semiconduttore a ossido metallico), che funziona modificando la conduttività attraverso un campo elettrico.
+
+Altri tipi di transistor includono:
+<ul>
+<li>BJT (transistor bipolari a giunzione)</li>
+<li>JFET (transistor a effetto di campo a giunzione)
+<li>IGBT (transistor bipolari a gate isolato), usati spesso nell'elettronica di potenza.</li>
+</ul>
+</li>
+</ul>
+</p>
+</section>
+
+<section id="trasferimento" class="section">
+    <h2>Trasferimento di potenza wireless</h2>
+    <p>Il trasferimento di energia senza fili (Wireless Power Transfer, o WPT) ha origini alla fine del 1800, quando Nikola Tesla dimostrò che era possibile trasferire energia elettrica attraverso l’aria. Questo avviene grazie alla creazione di un campo magnetico tra due bobine, una chiamata trasmettitore e l’altra ricevitore, in un fenomeno noto come accoppiamento magnetico risonante.
+
+In pratica, il trasmettitore, collegato a una fonte di corrente, genera un campo magnetico variabile. Questo campo induce una corrente elettrica nella bobina ricevente, permettendo così il trasferimento di energia senza l’uso di fili.
+
+Il WPT viene oggi utilizzato per ricaricare dispositivi elettronici personali (come smartphone e smartwatch), strumenti portatili e anche apparecchiature industriali, eliminando i cavi, aumentando la comodità, migliorando la sicurezza e riducendo l’usura dei connettori fisici.
+</p>
+</section>
+
+  <section id="curiosita" class="section">
+    <h2>Curiosità</h2>
+    <p>
+      - La luce visibile è solo una piccola parte dello spettro elettromagnetico.<br>
+      - Le bussole funzionano grazie al campo magnetico terrestre.<br>
+      - I dispositivi wireless usano onde elettromagnetiche per comunicare.<br>
+      - Il Sole emette continuamente onde elettromagnetiche.
+    </p>
+    <div class="image-container fade-in">
+      <img src="Lo-spettro.png" alt="Spettro elettromagnetico" class="scroll-image">
+      <p style="margin-top:10px; font-size: 0.9em;">Lo spettro elettromagnetico: dalle onde radio ai raggi gamma.</p>
+    </div>
+  </section>
+
+  <section id="conclusione" class="section">
+    <h2>Conclusione</h2>
+    <p>
+      L’elettromagnetismo non è solo un pilastro della fisica, ma anche una parte essenziale della nostra vita quotidiana. Comprendere i campi elettrici e magnetici ci aiuta a capire meglio il mondo e le tecnologie che usiamo ogni giorno.
+    </p>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
